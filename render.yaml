@@ -1,0 +1,10 @@
+# Free-tier demo deploy on Render: New > Blueprint > pick this repo.
+# The free plan has no persistent disk, so the demo database resets on each restart (fine for a demo).
+services:
+  - type: web
+    name: video-review-demo
+    runtime: docker
+    plan: free
+    envVars:
+      - key: SECRET
+        generateValue: true
